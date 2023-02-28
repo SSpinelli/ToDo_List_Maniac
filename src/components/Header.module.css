@@ -1,0 +1,10 @@
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  background-color: var(--gray-700);
+  height: 200px;
+}
+
+.headerContainer img {
+  width: 7.875rem;
+}
