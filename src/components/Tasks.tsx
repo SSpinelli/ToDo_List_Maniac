@@ -1,15 +1,33 @@
 import { useState } from 'react'
 import { NewTask } from "./NewTask";
+import { NoTasks } from './NoTasks';
 import { Task } from "./Task";
 import styles from './Tasks.module.css'
 
+interface iListOfTasks {
+  id: string;
+  content: string;
+  isCompleted: boolean
+}[]
+
 export function Tasks() {
-  const [listOfTasks, setListOfTasks] = useState<string[]>(["Terminar o projeto ToDo List da RocketSeat", "Começar o curso de Github da Udemy"])
+  const [listOfTasks, setListOfTasks] = useState<iListOfTasks[]>([])
 
   function addNewTask(textInput: string) {
+    const newTaskObj = {
+      content: textInput,
+      isCompleted: false,
+      id: `${new Date()}-${textInput}`
+    }
     setListOfTasks((prevState) => {
-      return [...prevState, textInput]
+      return [...prevState, newTaskObj]
     })
+  }
+
+  function onDeleteTask(id: string) {
+    const listOfTasksWithoutRemovedOne = listOfTasks.filter((task) => task.id !== id)
+
+    setListOfTasks(listOfTasksWithoutRemovedOne)
   }
 
   return (
@@ -23,12 +41,12 @@ export function Tasks() {
         ? (
           <section className={styles.tasksContainer}>
             {listOfTasks.map((task) => (
-              <Task key={task} text={task} />
+              <Task key={task.id} data={task} onDeleteTask={onDeleteTask} />
             ))}
           </section>
         )
         :
-        <h1>Sem Tarefas no momento</h1>
+        <NoTasks />
       }
 
     </main>
