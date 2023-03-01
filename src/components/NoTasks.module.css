@@ -1,0 +1,22 @@
+.noTasksContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  height: 30vh;
+  margin-top: 2rem;
+  border-top: 1px solid var(--gray-300);
+  border-radius: 8px;
+}
+
+.noTasksContainer svg {
+  margin-top: 4rem;
+  color: var(--gray-300);
+}
+
+.noTasksContainer p {
+  display: flex;
+  flex-direction: column;
+  color: var(--gray-300);
+}

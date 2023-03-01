@@ -51,6 +51,6 @@
 }
 
 .formContainer button:disabled {
-  opacity: 0.7;
+  background-color: var(--gray-300);
   cursor: not-allowed;
 }
