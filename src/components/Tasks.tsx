@@ -12,6 +12,7 @@ interface iListOfTasks {
 
 export function Tasks() {
   const [listOfTasks, setListOfTasks] = useState<iListOfTasks[]>([])
+  const numberOfCompletedTasks = listOfTasks.filter((task) => task.isCompleted).length;
 
   function addNewTask(textInput: string) {
     const newTaskObj = {
@@ -30,18 +31,39 @@ export function Tasks() {
     setListOfTasks(listOfTasksWithoutRemovedOne)
   }
 
+  function onChangeStatusOfTask(id: string) {
+    const updatedListOfTasks = listOfTasks.map((task) => {
+      if (task.id === id) {
+        return {
+          ...task,
+          isCompleted: !task.isCompleted
+        }
+      }
+      return task
+    })
+
+    setListOfTasks(updatedListOfTasks)
+  }
+
+  function organizeTasks() {
+    const completedTasks = listOfTasks.filter((task) => task.isCompleted);
+    const incompletedTasks = listOfTasks.filter((task) => !task.isCompleted);
+
+    return [...incompletedTasks, ...completedTasks]
+  }
+
   return (
     <main>
       <NewTask addNewTask={addNewTask} />
       <div className={styles.tasksCounter}>
-        <p className={styles.createdTasksCounter}>Tarefas criadas<span>0</span></p>
-        <p className={styles.completedTasksCounter}>Concluídas<span>0 de 0</span></p>
+        <p className={styles.createdTasksCounter}>Tarefas criadas<span>{listOfTasks.length}</span></p>
+        <p className={styles.completedTasksCounter}>Concluídas<span>{numberOfCompletedTasks} de {listOfTasks.length}</span></p>
       </div>
       {listOfTasks.length
         ? (
           <section className={styles.tasksContainer}>
-            {listOfTasks.map((task) => (
-              <Task key={task.id} data={task} onDeleteTask={onDeleteTask} />
+            {organizeTasks().map((task) => (
+              <Task key={task.id} data={task} onDeleteTask={onDeleteTask} onChangeStatusOfTask={onChangeStatusOfTask} />
             ))}
           </section>
         )
