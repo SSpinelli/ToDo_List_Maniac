@@ -8,6 +8,7 @@
   margin-top: 2rem;
   border-top: 1px solid var(--gray-300);
   border-radius: 8px;
+  padding: 0 1rem;
 }
 
 .noTasksContainer svg {

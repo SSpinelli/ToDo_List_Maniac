@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 90px;
   gap: .5rem;
   margin-top: -62px;
+  padding: 0 1rem;
 }
 
 .formContainer input {
@@ -53,4 +54,10 @@
 .formContainer button:disabled {
   background-color: var(--gray-300);
   cursor: not-allowed;
+}
+
+@media (max-width:360px) {
+  .formContainer {
+    grid-template-columns: 1fr;
+  }
 }
