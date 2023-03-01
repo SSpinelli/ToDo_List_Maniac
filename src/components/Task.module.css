@@ -1,6 +1,6 @@
 .taskContainer {
   display: grid;
-  align-items: start;
+  align-items: center;
   grid-template-columns: 24px 1fr 24px;
   gap: .75rem;
   padding: 1rem;
@@ -10,12 +10,42 @@
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-.taskContainer input[type=checkbox] {
-  background-color: aqua;
+.checkIcon {
+  background-color: var(--purple-700);
+  box-sizing: initial;
+  padding: 4px;
   border-radius: 50%;
+  cursor: pointer;
+
+  transition: background-color 0.1s;
 }
 
-.taskContainer svg {
+.checkIcon:hover {
+  background-color: var(--purple-500);
+}
+
+.notCheckIcon {
+  color: transparent;
+  border: 1px solid var(--blue-500);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition: background-color 0.1s;
+}
+
+.notCheckIcon:hover {
+  border: 1px solid var(--blue-700);
+}
+
+.completedP {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.trashIcon {
   padding: 6px;
   box-sizing: initial;
   border-radius: 8px;
@@ -23,13 +53,8 @@
   transition: background-color 0.1s, color 0.1s;
 }
 
-.taskContainer svg:hover {
+.trashIcon:hover {
   background-color: var(--gray-400);
   color: var(--red);
   cursor: pointer;
-}
-
-.completedP {
-  text-decoration: line-through;
-  color: var(--gray-300);
 }

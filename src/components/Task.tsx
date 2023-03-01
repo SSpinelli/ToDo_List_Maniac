@@ -1,4 +1,4 @@
-import { Trash } from 'phosphor-react'
+import { Trash, Check } from 'phosphor-react'
 import styles from './Task.module.css'
 
 interface iTask {
@@ -22,9 +22,10 @@ export function Task({ data: { content, id, isCompleted }, onDeleteTask, onChang
 
   return (
     <div className={styles.taskContainer}>
-      <input type="checkbox" onChange={handleCheckbox} checked={isCompleted} />
+      <Check className={isCompleted ? styles.checkIcon : styles.notCheckIcon} onClick={handleCheckbox} size={12} />
+      {/* <input type="checkbox" onChange={handleCheckbox} checked={isCompleted} /> */}
       <p className={isCompleted ? styles.completedP : ''}>{content}</p>
-      <Trash size={20} onClick={handleClickInTrash} />
+      <Trash className={styles.trashIcon} size={20} onClick={handleClickInTrash} />
     </div>
   )
 }
