@@ -6,8 +6,6 @@ link com o site online -> https://to-do-list-x22d.onrender.com/
 
 Este projeto consiste em apenas o front, não tendo integração com banco de dados, também não tem persistencia de dados.
 
-Disclaimer -> O que está online é o feito em React, ele também é o único que foi estilizado, o resto replica apenas as mesmas funcionalidades, porém não possue CSS e não estão online.
-
 -> Vanila JS - https://github.com/SSpinelli/vanilaJS_todo_list
 
 -> React - Este Repositório.
@@ -21,3 +19,5 @@ Disclaimer -> O que está online é o feito em React, ele também é o único qu
 -> Solid - https://github.com/SSpinelli/Solid_todo_list
 
 -> Lit - https://github.com/SSpinelli/Lit_todo_list
+
+Disclaimer -> O que está online é o feito em React, ele também é o único que foi estilizado, o resto replica apenas as mesmas funcionalidades, porém não possue CSS e não estão online.
