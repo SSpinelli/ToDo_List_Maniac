@@ -1,7 +1,31 @@
-# todoListIgnite
+# ToDo List Maniac
 
-## Projeto de conclusão do primeiro módulo da trilha de desenvolvimento REACT, do curso Ignite da RocketSeat.
+### Projeto To Do List, feito de 10 formas diferentes, JS Puro e 9 Libs/Frameworks
 
 Este projeto consiste em apenas o front, não tendo integração com banco de dados, também não tem persistencia de dados.
+
+Disclaimer -> O que está online é o feito em React, ele também é o único que foi estilizado, o resto replica apenas as mesmas funcionalidades, porém não possue CSS e não estão online.
+
+-> Vanila JS - https://github.com/SSpinelli/vanilaJS_todo_list
+
+-> React - Este Repositório.
+
+-> VueJs - https://github.com/SSpinelli/vueJS_todo_list
+
+-> Angular - https://github.com/SSpinelli/Angular_todo_list
+
+-> Svelte - https://github.com/SSpinelli/Svelte_todo_list
+
+-> Solid - https://github.com/SSpinelli/Solid_todo_list
+
+-> Lit - https://github.com/SSpinelli/Lit_todo_list
+
+-> Stencil - https://github.com/SSpinelli/Stencil_todo_list
+
+-> AlpineJS -> https://github.com/SSpinelli/AlpineJS_todo_list
+
+-> Mithril -> https://github.com/SSpinelli/Mithril_todo_list
+
+
 
 link com o site online -> https://to-do-list-x22d.onrender.com/
